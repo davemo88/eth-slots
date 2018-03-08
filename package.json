@@ -1,0 +1,31 @@
+{
+  "name": "eth-slots",
+  "version": "0.0.420",
+  "description": "dapp",
+  "main": "src/index.js",
+  "scripts": {
+    "truffle": "./node_modules/.bin/truffle test tests/* && exit 0",
+    "migrate": "./node_modules/.bin/truffle compile && ./node_modules/.bin/truffle migrate && exit 0",
+    "ayy": "node ./node_modules/webpack/bin/webpack.js",
+    "lmao": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base=app/ --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Owen",
+  "license": "UNLICENSED",
+  "homepage": "http://irl.xn--q9jyb4c/",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.6.1",
+    "json-loader": "^0.5.7",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "truffle": "^4.0.4",
+    "web3": "^1.0.0-beta.27",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "dependencies": {
+    "testrpc": "0.0.1"
+  }
+}

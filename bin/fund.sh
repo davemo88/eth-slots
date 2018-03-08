@@ -1,0 +1,1 @@
+curl -d '{"jsonrpc":"2.0","method":"eth_sendTransaction","params": [{"from":"0x26d499e003a74da4fac478a773bd81073c75283f", "to":"0x7479f78b42774115db2299bb2f1750cf34934172", "value": 1e18}], "id":1}' -X POST http://127.0.0.1:8545/
