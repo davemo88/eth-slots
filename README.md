@@ -1,4 +1,4 @@
 # eth-slots
 
 
-:cherry::hanky::diamond:
+:cherries::100::gem:
