@@ -4,11 +4,9 @@
 
 # instructions
 
-1. install: `npm install`
-2. develop:
-  1. `npm run lmao`
-  2. `./bin/testrpc.sh`
-  3. visit http://localhost:420
+* install: `npm install`
+* migrate contract: `npm run migrate`
+* webserver: `npm run lmao` (http://localhost:42069)
+* test-rpc: `./bin/testrpc.sh`
 
-
-:cherries::100::gem:
+:cherries::100::gem::cherries::100::gem::cherries::100::gem::cherries::100::gem::cherries::100::gem::cherries::100::gem::cherries::100::gem::cherries::100::gem:
