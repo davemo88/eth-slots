@@ -9,3 +9,4 @@ npm-debug.log
 *.mtl
 package-lock.json
 build
+contract-info.json

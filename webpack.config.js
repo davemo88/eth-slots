@@ -6,7 +6,7 @@ module.exports = {
     publicPath: "assets/",
     filename: 'eth-slots.bundled.js',
     libraryTarget: 'var',
-    library: 'dd',
+    library: 'slots',
   },
   module: {
     loaders: [

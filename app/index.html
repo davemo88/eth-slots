@@ -63,31 +63,33 @@
       margin: 5px 0;
     }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script> -->
+    <script src="/assets/eth-slots.bundled.js"></script>
   </head>
   <body>
     <table class="slot-machine ff7" id="slot-machine">
       <tr>
-        <td>
-          <div class="spinner" id="slot-1">FUCK WITH ME</div>
-        </td>
-        <td>
-          <div class="spinner" id="slot-2">YOU KNOW</div>
-        </td>
-        <td>
-          <div class="spinner" id="slot-3">I GOT IT</div>
-        </td>
+        <td><div class="spinner" id="slot-1">FUCK WITH ME</div></td>
+        <td><div class="spinner" id="slot-2">YOU KNOW</div></td>
+        <td><div class="spinner" id="slot-3">I GOT IT</div></td>
       </center>
     </table>
 
     <div class="ff7">
-      <div>You're going to have to make a choice...</div>
-      <form>
-        <ul>
-          <li>Spin!</li>
-          <li>Item</li>
-          <li>Run</li>
-        </ul>
-      </form>
+      <h1>Tifa</h1>
+      <p>&ldquo;You're going to have to make a choice...&rdquo;</p>
+      <div style="padding: 0.25em 0.25em 0.25em 1.5em;">
+        <form>
+          <ul class="choices">
+            <li><a href="javascript:slots.spin();">Spin!</a></li>
+            <li>Summon</li>
+            <li>Item</li>
+            <li>Run</li>
+          </ul>
+        </form>
+        </p>
+      </div>
     </div>
   </body>
 </html>
