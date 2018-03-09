@@ -26,6 +26,7 @@
     "webpack-dev-server": "^1.15.1"
   },
   "dependencies": {
-    "testrpc": "0.0.1"
+    "testrpc": "0.0.1",
+    "ethereumjs-testrpc": "6.0.3"
   }
 }
