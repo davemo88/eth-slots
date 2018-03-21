@@ -11,7 +11,7 @@ contract Slots {
   uint private balance;
 
 // payouts
-  int[] private PAYOUTS;
+  uint[] private PAYOUTS;
 
   function mortal() { owner = msg.sender; }
 
@@ -23,17 +23,28 @@ contract Slots {
     balance = msg.value;
   }
 
-  function spin() public payable returns (uint payout) { 
-    update_balance();
+  function spin() public payable { 
+    update_balance_wager();
     bytes32 spin_data_hash = keccak256(msg.data);
     uint distance = compute_hamming(spin_data_hash);
-    payout = get_payout(distance);
+    uint payout = get_payout(distance);
     msg.sender.transfer(payout);
+// how to make sure transfer succeeds?
+    update_balance_payout(payout);
   }
 
-  function update_balance() internal {
-    require (msg.value > 0);
+  function update_balance_wager() internal {
+    require(msg.value > 0);
     balance = balance + msg.value;
+  }
+
+  function update_balance_payout(uint payout) internal {
+    require(balance >= payout);
+// should we do this?
+    if (balance < payout) {
+      payout = balance;
+    }
+    balance = balance - payout;
   }
 
   function compute_hamming(bytes32 spin_data_hash) internal returns (uint distance) {
@@ -49,8 +60,5 @@ contract Slots {
     payout = distance;
     return payout;
   }
-
-
-
 
 }
