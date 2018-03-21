@@ -1,4 +1,5 @@
-import {c} from './contract-info.json';
+import c from './contract-info.json';
+import {spin} from './slots.js';
 
 var Web3 = require('web3');
 
@@ -19,6 +20,8 @@ let ACCOUNT = web3js.eth.accounts;
 function spin() {
   console.log(ACCOUNT);
 }
+=======
+console.log("x_x And they say you couldn't make an ethereum casino");
 
 export {
   spin,
