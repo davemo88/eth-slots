@@ -20,11 +20,18 @@ contract Slots {
 
   function kill() { if (msg.sender == owner) selfdestruct(owner); }
 
-// 
-  function SlotMachine() public {
+  // Craete contract
+  function Slots() public {
     owner = msg.sender;
     balance = msg.value;
-    balance = 10000000000;
+  }
+
+  function getOwner() public returns (address) {
+    return owner;
+  }
+
+  function getBalance() public returns (uint) {
+    return balance;
   }
 
   uint counter;
@@ -80,6 +87,7 @@ contract Slots {
     return distance;
   }
 
+  // TODO: Make this make money
   function get_payout(bytes32 spin_data_hash) internal returns (uint payout) {
 //    return PAYOUTS[distance]
     payout = compute_hamming(spin_data_hash);
