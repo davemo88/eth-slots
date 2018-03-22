@@ -13,6 +13,9 @@ contract Slots {
 // payouts
   uint[] private PAYOUTS;
 
+
+  //8constant uint GAMBLE_SIZE = 1e8 wei;
+
   function mortal() { owner = msg.sender; }
 
   function kill() { if (msg.sender == owner) selfdestruct(owner); }
@@ -21,16 +24,36 @@ contract Slots {
   function SlotMachine() public {
     owner = msg.sender;
     balance = msg.value;
+    balance = 10000000000;
   }
 
+  uint counter;
+
+  event SpinResult(uint id, address from, bytes32 what, uint value);
+
   function spin() public payable { 
+
+    // ...
+    counter = 0;
+
+    // ...
     update_balance_wager();
+
+    // ...
     bytes32 spin_data_hash = keccak256(msg.data);
-    uint distance = compute_hamming(spin_data_hash);
-    uint payout = get_payout(distance);
-    msg.sender.transfer(payout);
+
+    uint payout = get_payout(spin_data_hash);
+
+    // We can't 
+    // msg.sender.transfer(payout);
 // how to make sure transfer succeeds?
-    update_balance_payout(payout);
+    update_balance_payout(1000000000);
+
+    // Lezgo
+    counter += 1;
+
+    // Update events log
+    SpinResult(counter, msg.sender, spin_data_hash, payout);
   }
 
   function update_balance_wager() internal {
@@ -39,8 +62,10 @@ contract Slots {
   }
 
   function update_balance_payout(uint payout) internal {
-    require(balance >= payout);
+    // ...
+    // require(balance >= payout);
 // should we do this?
+
     if (balance < payout) {
       payout = balance;
     }
@@ -55,9 +80,9 @@ contract Slots {
     return distance;
   }
 
-  function get_payout(uint distance) internal returns (uint payout) {
+  function get_payout(bytes32 spin_data_hash) internal returns (uint payout) {
 //    return PAYOUTS[distance]
-    payout = distance;
+    payout = compute_hamming(spin_data_hash);
     return payout;
   }
 
