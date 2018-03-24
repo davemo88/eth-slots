@@ -10,19 +10,34 @@ if (typeof Web3 !== 'undefined') {
 }
 
 console.log(web3js);
-let ACCOUNT = web3js.eth.accounts;
+let ACCOUNTS = web3js.eth.accounts;
 
 
+console.log("<<<!");
+web3.eth.getAccounts((err, accounts) => {
+  console.log("!!!!!");
+  if (err) {
+    console.error("Get accounts failed");
+    throw ":(";
+  }
+  console.log("Succeeded");
+  console.log(">>>>", accounts);
+  ACCOUNTS = accounts;
+});
+
+console.log(">>>!");
+
+function sendSpin() {
+  console.log("!!!");
+  let address = ACCOUNTS[0];
+  let amount = 0.1;
+
+  spin(address, amount);
+}
+
+
+export {sendSpin};
 /**
  * Spin the wheel
  * @param {nothing} nothing
  */
-function spin() {
-  console.log(ACCOUNT);
-}
-=======
-console.log("x_x And they say you couldn't make an ethereum casino");
-
-export {
-  spin,
-};

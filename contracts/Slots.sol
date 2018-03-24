@@ -21,10 +21,9 @@ contract Slots {
   function kill() { if (msg.sender == owner) selfdestruct(owner); }
 
 // 
-  function SlotMachine() public {
+  function Slots() public {
     owner = msg.sender;
     balance = msg.value;
-    balance = 10000000000;
   }
 
   uint counter;
