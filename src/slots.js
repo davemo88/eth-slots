@@ -8,6 +8,7 @@ let Slots = new web3js.eth.Contract(c.abi, c.contractAddress);
  * @param amount {uint} amount in eth
  */
 function spin(account, amount) {
+  console.log(account, "@", amount);
   let caller = Slots.methods.spin();
   let msg = {
     from: account,
@@ -17,8 +18,8 @@ function spin(account, amount) {
 
   caller.send(msg, (err, ok) => {
     if (err) {
-      console.log(account, amount);
       console.error("Fuck no!", err);
+      return;
     }
 
     console.log("Fuck yea!", ok);
