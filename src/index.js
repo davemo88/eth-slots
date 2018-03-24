@@ -12,8 +12,6 @@ if (typeof Web3 !== 'undefined') {
 console.log(web3js);
 let ACCOUNTS = web3js.eth.accounts;
 
-
-console.log("<<<!");
 web3.eth.getAccounts((err, accounts) => {
   console.log("!!!!!");
   if (err) {
@@ -25,8 +23,6 @@ web3.eth.getAccounts((err, accounts) => {
   ACCOUNTS = accounts;
 });
 
-console.log(">>>!");
-
 function sendSpin() {
   console.log("!!!");
   let address = ACCOUNTS[0];
@@ -37,7 +33,3 @@ function sendSpin() {
 
 
 export {sendSpin};
-/**
- * Spin the wheel
- * @param {nothing} nothing
- */
