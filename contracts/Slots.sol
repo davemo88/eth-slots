@@ -21,7 +21,7 @@ contract Slots {
   function kill() { if (msg.sender == owner) selfdestruct(owner); }
 
   // Craete contract
-  function Slots() public {
+  function Slots() public payable {
     owner = msg.sender;
     balance = msg.value;
   }
@@ -38,7 +38,11 @@ contract Slots {
 
   event SpinResult(uint id, address from, bytes32 what, uint value);
 
-  function spin() public payable { 
+  function spin() public payable {
+
+  }
+
+  function spin2() public payable { 
 
     // ...
     counter = 0;

@@ -4,7 +4,7 @@ var path = require('path');
 var DeadDrop = artifacts.require("./Slots.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(DeadDrop).then((err, res) => {
+  deployer.deploy(DeadDrop, {value:1000}).then((err, res) => {
 
     DeadDrop.deployed().then(x => {
 

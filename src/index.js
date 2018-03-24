@@ -26,7 +26,7 @@ web3.eth.getAccounts((err, accounts) => {
 function sendSpin() {
   console.log("!!!");
   let address = ACCOUNTS[0];
-  let amount = 0.1;
+  let amount = web3.toWei('0.01', 'ether');
 
   spin(address, amount);
 }
