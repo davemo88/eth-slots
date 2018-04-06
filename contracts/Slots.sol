@@ -37,9 +37,10 @@ contract Slots {
   uint counter;
 
   event SpinResult(uint id, address from, bytes32 what, uint value);
+  event FuckIt(uint id);
 
   function spin() public payable {
-
+    FuckIt(0);
   }
 
   function spin2() public payable { 
